@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پورتفولیو — RITM</title>
+    <meta name="description" content="نمونه کارهای آژانس خلاقیت دیجیتال ریتم در زمینه تدوین ویدیو، توسعه وب و اپلیکیشن موبایل.">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: { extend: {
+                colors: {
+                    "primary":"#d0bcff","on-surface":"#e5e2e1","on-background":"#e5e2e1",
+                    "on-surface-variant":"#cbc3d7","secondary":"#adc6ff","background":"#131313",
+                    "surface":"#131313","surface-container-high":"#2a2a2a","primary-container":"#a078ff"
+                },
+                borderRadius: { DEFAULT:"0.25rem", lg:"0.5rem", xl:"0.75rem", full:"9999px" },
+                spacing: { "margin-mobile":"16px","margin-desktop":"48px","container-max":"1280px" },
+                fontFamily: {
+                    "headline-sm":["Vazirmatn"],"body-lg":["Vazirmatn"],"code-label":["JetBrains Mono"],
+                    "body-md":["Vazirmatn"],"display-lg":["Vazirmatn"],
+                    "display-lg-mobile":["Vazirmatn"],"headline-md":["Vazirmatn"]
+                },
+                fontSize: {
+                    "headline-sm":["24px",{lineHeight:"1.4",fontWeight:"600"}],
+                    "body-lg":["18px",{lineHeight:"1.8",fontWeight:"400"}],
+                    "code-label":["14px",{lineHeight:"1.2",letterSpacing:"0.05em",fontWeight:"500"}],
+                    "body-md":["16px",{lineHeight:"1.6",fontWeight:"400"}],
+                    "display-lg":["64px",{lineHeight:"1.1",letterSpacing:"-0.02em",fontWeight:"800"}],
+                    "display-lg-mobile":["40px",{lineHeight:"1.2",fontWeight:"800"}],
+                    "headline-md":["32px",{lineHeight:"1.4",fontWeight:"700"}]
+                }
+            }}
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased min-h-screen flex flex-col relative bg-background font-body-md text-body-md text-on-background bg-grid">
+
+    <div id="preloader"><div class="loader-ring"></div><div class="preloader-logo"></div></div>
+    <div id="scroll-progress"><div id="scroll-progress-bar"></div></div>
+    <div id="back-to-top"><span class="material-symbols-outlined">arrow_upward</span></div>
+
+    <div class="theme-toggle fixed top-4 left-4 z-[60] md:top-auto md:bottom-6 md:right-6 md:left-auto" id="theme-toggle">
+        <span class="material-symbols-outlined">dark_mode</span>
+    </div>
+    <button class="lang-toggle fixed top-4 right-4 z-[60] md:top-auto md:bottom-6 md:right-20 md:left-auto" id="lang-toggle">
+        <span id="lang-label">English</span>
+    </button>
+
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-secondary"></div>
+    <div class="ambient-glow-tertiary"></div>
+
+    <!-- Modal -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close"><span class="material-symbols-outlined">close</span></button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Desktop Nav -->
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-container-max rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)] flex justify-between items-center px-8 py-3 z-50 rtl hidden md:flex transition-all duration-500 hover:bg-white/10">
+        <a href="index.html" class="flex items-center gap-2 cursor-pointer select-none">
+            <img src="assets/logo.png" alt="ریتم" class="w-10 h-10 rounded-full object-contain">
+        </a>
+        <nav class="flex gap-8 items-center">
+            <a href="index.html" class="nav-link text-on-surface/70" data-i18n="nav-home">خانه</a>
+            <a href="main.html" class="nav-link active text-primary font-bold" data-i18n="nav-portfolio">پورتفولیو</a>
+            <a href="cod.html" class="nav-link text-on-surface/70" data-i18n="nav-services">خدمات</a>
+            <a href="www.html" class="nav-link text-on-surface/70" data-i18n="nav-contact">تماس</a>
+        </nav>
+        <a href="www.html" class="btn-primary px-7 py-2.5 rounded-full font-body-md text-body-md hover:scale-105 active:scale-95 transition-transform inline-flex items-center justify-center" data-i18n="nav-cta">شروع پروژه</a>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] rounded-2xl bg-white/5 backdrop-blur-2xl border border-white/10 flex justify-around items-center py-3 z-50 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+        <a href="index.html" class="flex flex-col items-center text-on-surface-variant gap-0.5 nav-link">
+            <span class="material-symbols-outlined text-2xl">home</span>
+            <span class="text-[10px]" data-i18n="nav-home">خانه</span>
+        </a>
+        <a href="main.html" class="flex flex-col items-center text-primary gap-0.5 nav-link active">
+            <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL'1;">work</span>
+            <span class="text-[10px] font-bold" data-i18n="nav-portfolio">پورتفولیو</span>
+        </a>
+        <a href="cod.html" class="flex flex-col items-center text-on-surface-variant gap-0.5 nav-link">
+            <span class="material-symbols-outlined text-2xl">design_services</span>
+            <span class="text-[10px]" data-i18n="nav-services">خدمات</span>
+        </a>
+        <a href="www.html" class="flex flex-col items-center text-on-surface-variant gap-0.5 nav-link">
+            <span class="material-symbols-outlined text-2xl">contact_support</span>
+            <span class="text-[10px]" data-i18n="nav-contact">تماس</span>
+        </a>
+    </nav>
+
+    <main class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32 pt-20 md:pt-28 flex-grow">
+
+        <div class="mb-16 flex flex-col gap-6 text-center md:text-right reveal">
+            <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface" data-i18n="portfolio-title">نمونه کارها</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto md:mx-0" data-i18n="portfolio-desc">
+                مجموعه‌ای از پروژه‌های برگزیده ما در زمینه‌های تدوین ویدیو، توسعه وب و اپلیکیشن موبایل.
+            </p>
+        </div>
+
+        <!-- Filters -->
+        <div class="mb-8 flex flex-col md:flex-row gap-4 items-center justify-between reveal" style="--reveal-delay: 0.15s;">
+            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <button class="filter-chip active px-6 py-2 rounded-full font-code-label text-code-label" data-filter="all" data-i18n="filter-all">همه پروژه‌ها</button>
+                <button class="filter-chip px-6 py-2 rounded-full font-code-label text-code-label" data-filter="video" data-i18n="filter-video">تدوین ویدیو</button>
+                <button class="filter-chip px-6 py-2 rounded-full font-code-label text-code-label" data-filter="web" data-i18n="filter-web">توسعه وب</button>
+                <button class="filter-chip px-6 py-2 rounded-full font-code-label text-code-label" data-filter="mobile" data-i18n="filter-mobile">اپلیکیشن موبایل</button>
+            </div>
+            <div class="relative w-full md:w-64">
+                <input type="text" id="portfolio-search" placeholder="جستجو..." class="w-full bg-black/20 border border-white/10 rounded-full py-2 px-4 pl-10 text-on-surface placeholder-white/30 focus:border-primary transition-all">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface/50 text-sm">search</span>
+            </div>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+
+            <!-- Card 1 -->
+            <article class="glass-card shine-effect tilt-card rounded-xl p-4 flex flex-col gap-4 cursor-pointer group reveal reveal-left" data-category="video" style="--reveal-delay: 0.1s;" data-tilt data-title="تیزر تبلیغاتی محصول" data-desc="تدوین و مونتاژ تیزر ۳۰ ثانیه‌ای با پریمیر پرو، شامل اصلاح رنگ و صداگذاری.">
+                <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-high border border-white/5">
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDit8zOo4-g3zKLBcCgzT5CQLuFNGusR2bmrCUCR3XfjXLTAEgpxv8vOoW-NpjMM9imfWchD7YtT9NJN5Gww7WUdOelOwuzQIY3VzNuG0qby9b5f5QpFZNPM9vgEtuChxTgv3hh-m9iErDSuffHWNQJZyQmSOYXFfvGA82xaoKs6J5MeDR0Prkdtffumo3WtOoO8Odn_2tjOJO94Abca7jwG76uHgwAabyPZy2YpuSWCZWI6tz-jAxKaQ');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute top-3 right-3 flex gap-2">
+                        <span class="tech-tag px-3 py-1 rounded-full font-code-label text-[10px]">Premiere Pro</span>
+                        <span class="tech-tag px-3 py-1 rounded-full font-code-label text-[10px]">Color Grading</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 p-2 tilt-card-inner">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors" data-i18n="p1-title">تیزر تبلیغاتی محصول</h3>
+                        <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-all">arrow_forward</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2" data-i18n="p1-desc">تدوین و مونتاژ تیزر ۳۰ ثانیه‌ای با پریمیر پرو، شامل اصلاح رنگ و صداگذاری.</p>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="glass-card shine-effect tilt-card rounded-xl p-4 flex flex-col gap-4 cursor-pointer group reveal" data-category="web" style="--reveal-delay: 0.2s;" data-tilt data-title="سایت شرکتی مدرن" data-desc="طراحی و کدنویسی وب‌سایت شرکتی با انیمیشن‌های روان و بهینه‌سازی سئو.">
+                <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-high border border-white/5">
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPu3RIL4W_KxiBywVU1To-6VmCKzwpM6vuKMdpMQcxXIzMLxkmIFNEaPjJIjhuNul-yzrdULhDS9JwZneq6Ko6ng7Kt22AmezA-Hw8VjWGT87bocieQ9tInB6rGbQkvJpwQK7jU1u6Ybrj8onqcfbdW70UpkI7PZcAf32mgydd8PDvHNDSbPCR3QE4xwAETNUyqm5fBPrbdp7lUbaBK3sT5d-He-Ez_97h4iQhwSBV11hT7iScQjx_4w');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute top-3 right-3 flex gap-2">
+                        <span class="tech-tag px-3 py-1 rounded-full font-code-label text-[10px]">HTML/CSS</span>
+                        <span class="tech-tag px-3 py-1 rounded-full font-code-label text-[10px]">JavaScript</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 p-2 tilt-card-inner">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors" data-i18n="p2-title">سایت شرکتی مدرن</h3>
+                        <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-all">arrow_forward</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2" data-i18n="p2-desc">طراحی و کدنویسی وب‌سایت شرکتی با انیمیشن‌های روان و بهینه‌سازی سئو.</p>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="glass-card shine-effect tilt-card rounded-xl p-4 flex flex-col gap-4 cursor-pointer group reveal reveal-right" data-category="mobile" style="--reveal-delay: 0.3s;" data-tilt data-title="اپلیکیشن مدیریت وظایف" data-desc="اپلیکیشن موبایل ساده برای مدیریت وظایف روزانه با قابلیت ثبت و پیگیری.">
+                <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-high border border-white/5">
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwX1V01iCQNXAxXpcSorR1Diq_DwUUIygXwcjLHAh84J02ZdVIw59kxDQCaWkRRrO2XwBnFVQBErCyk2JjTYjKLdq4JJ3aREp_g2R4t-p1gVnAdkkSzQnglj9zKLsbh-KzsOW3gZIzXZ4snVUEsnI9GBRKBxhEvD0_PzPnMSvW9lvAcNWYuVhEnKLO5D88owK2VzhrFH_ez6VTJT60i0O9B6zBye3MdZ8rWjtF0jtUn1YMV0CPx_Y1YA');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute top-3 right-3 flex gap-2">
+                        <span class="tech-tag px-3 py-1 rounded-full font-code-label text-[10px]">Basic Mobile</span>
+                        <span class="tech-tag px-3 py-1 rounded-full font-code-label text-[10px]">Cross-platform</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 p-2 tilt-card-inner">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors" data-i18n="p3-title">اپلیکیشن مدیریت وظایف</h3>
+                        <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-all">arrow_forward</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2" data-i18n="p3-desc">اپلیکیشن موبایل ساده برای مدیریت وظایف روزانه با قابلیت ثبت و پیگیری.</p>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="glass-card shine-effect tilt-card rounded-xl p-4 flex flex-col gap-4 cursor-pointer group reveal reveal-left" data-category="video" style="--reveal-delay: 0.15s;" data-tilt data-title="موزیک ویدیو" data-desc="تدوین موزیک ویدیو با ریتم‌سازی دقیق و افکت‌های بصری جذاب.">
+                <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-high border border-white/5">
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtDqNQTpfwH_fsFN0Q1mt4UZ22ngJSyKFNB9vuFpxrxHbfUhfiHphWfkUJ_Pcg33zwOJt5Fgl4UDJ98HKWR_PVtZ0JoaV-d54PSBji9gUf6jZFVcirfqwqsMzebGMgnKzA5dAD9rpUYQ7uTU_L8kbxu6f8uo3BiSPuR3UscwE9MkP1trEdv0urt-9jyspx5gcWwy7GxOluFeIghT4XpL4lrv0MnRCSi6yEAMeonPBK33v7bsdqI6FPAA');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute top-3 right-3 flex gap-2">
+                        <span class="tech-tag px-3 py-1 rounded-full font-code-label text-[10px]">Premiere Pro</span>
+                        <span class="tech-tag px-3 py-1 rounded-full font-code-label text-[10px]">VFX</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 p-2 tilt-card-inner">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors" data-i18n="p4-title">موزیک ویدیو</h3>
+                        <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-all">arrow_forward</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2" data-i18n="p4-desc">تدوین موزیک ویدیو با ریتم‌سازی دقیق و افکت‌های بصری جذاب.</p>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="glass-card shine-effect tilt-card rounded-xl p-4 flex flex-col gap-4 cursor-pointer group reveal" data-category="web" style="--reveal-delay: 0.25s;" data-tilt data-title="وب‌سایت رزومه" data-desc="طراحی و پیاده‌سازی وب‌سایت شخصی با تمرکز بر سادگی و سرعت بارگذاری.">
+                <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-high border border-white/5">
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPu3RIL4W_KxiBywVU1To-6VmCKzwpM6vuKMdpMQcxXIzMLxkmIFNEaPjJIjhuNul-yzrdULhDS9JwZneq6Ko6ng7Kt22AmezA-Hw8VjWGT87bocieQ9tInB6rGbQkvJpwQK7jU1u6Ybrj8onqcfbdW70UpkI7PZcAf32mgydd8PDvHNDSbPCR3QE4xwAETNUyqm5fBPrbdp7lUbaBK3sT5d-He-Ez_97h4iQhwSBV11hT7iScQjx_4w');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute top-3 right-3 flex gap-2">
+                        <span class="tech-tag px-3 py-1 rounded-full font-code-label text-[10px]">React</span>
+                        <span class="tech-tag px-3 py-1 rounded-full font-code-label text-[10px]">Responsive</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 p-2 tilt-card-inner">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors" data-i18n="p5-title">وب‌سایت رزومه</h3>
+                        <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-all">arrow_forward</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2" data-i18n="p5-desc">طراحی و پیاده‌سازی وب‌سایت شخصی با تمرکز بر سادگی و سرعت بارگذاری.</p>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="glass-card shine-effect tilt-card rounded-xl p-4 flex flex-col gap-4 cursor-pointer group reveal reveal-right" data-category="mobile" style="--reveal-delay: 0.35s;" data-tilt data-title="اپلیکیشن یادداشت‌برداری" data-desc="اپلیکیشن موبایل سبک برای یادداشت‌برداری سریع با ذخیره‌سازی محلی.">
+                <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-high border border-white/5">
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwX1V01iCQNXAxXpcSorR1Diq_DwUUIygXwcjLHAh84J02ZdVIw59kxDQCaWkRRrO2XwBnFVQBErCyk2JjTYjKLdq4JJ3aREp_g2R4t-p1gVnAdkkSzQnglj9zKLsbh-KzsOW3gZIzXZ4snVUEsnI9GBRKBxhEvD0_PzPnMSvW9lvAcNWYuVhEnKLO5D88owK2VzhrFH_ez6VTJT60i0O9B6zBye3MdZ8rWjtF0jtUn1YMV0CPx_Y1YA');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute top-3 right-3 flex gap-2">
+                        <span class="tech-tag px-3 py-1 rounded-full font-code-label text-[10px]">Basic Mobile</span>
+                        <span class="tech-tag px-3 py-1 rounded-full font-code-label text-[10px]">Offline</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 p-2 tilt-card-inner">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors" data-i18n="p6-title">اپلیکیشن یادداشت‌برداری</h3>
+                        <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-all">arrow_forward</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2" data-i18n="p6-desc">اپلیکیشن موبایل سبک برای یادداشت‌برداری سریع با ذخیره‌سازی محلی.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="mt-16 text-center reveal" style="--reveal-delay: 0.2s;">
+            <a href="www.html" class="glass-panel px-8 py-3 rounded-full font-body-md text-body-md text-on-surface hover:border-primary hover:text-primary transition-all duration-300 inline-flex items-center gap-2 hover:scale-105" data-i18n="portfolio-cta">
+                درخواست پروژه مشابه
+                <span class="material-symbols-outlined text-sm">arrow_back</span>
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="w-full border-t border-white/5 bg-surface mt-auto relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-6 gap-4 max-w-container-max mx-auto rtl">
+            <img src="assets/logo.png" alt="ریتم" class="w-8 h-8 rounded-full object-contain">
+            <div class="flex gap-6">
+                <span class="font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100 transition-all hover:text-primary cursor-pointer" data-i18n="footer-telegram">تلگرام</span>
+                <span class="font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100 transition-all hover:text-primary cursor-pointer" data-i18n="footer-bale">بله</span>
+                <span class="font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100 transition-all hover:text-primary cursor-pointer" data-i18n="footer-instagram">اینستاگرام</span>
+            </div>
+            <div class="font-body-md text-body-md text-on-surface-variant text-sm" data-i18n="footer-copy">© ۲۰۲۴ ریتم. تمامی حقوق محفوظ است.</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // ─── اسکریپت مخصوص پورتفولیو ───
+        window.initPage = function() {
+            initFilters();
+            initSearch();
+            initModal();
+        };
+
+        function initFilters() {
+            document.querySelectorAll('.filter-chip').forEach(chip => {
+                chip.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    applyFilters();
+                });
+            });
+        }
+        function initSearch() {
+            const s = document.getElementById('portfolio-search');
+            if (s) s.addEventListener('input', applyFilters);
+        }
+        function applyFilters() {
+            const active = document.querySelector('.filter-chip.active')?.dataset.filter || 'all';
+            const term = document.getElementById('portfolio-search')?.value.toLowerCase().trim() || '';
+            document.querySelectorAll('#portfolio-grid .glass-card').forEach((card, i) => {
+                const cat = card.dataset.category;
+                const title = card.dataset.title?.toLowerCase() || '';
+                const desc = card.dataset.desc?.toLowerCase() || '';
+                const ok = (active === 'all' || cat === active) &&
+                           (!term || title.includes(term) || desc.includes(term));
+                if (ok) {
+                    card.style.display = 'flex';
+                    card.style.animation = 'none';
+                    card.offsetHeight;
+                    card.style.animation = `fadeUp 0.5s ease ${i * 0.05}s forwards`;
+                } else card.style.display = 'none';
+            });
+        }
+
+        function initModal() {
+            const overlay = document.getElementById('project-modal');
+            const body = document.getElementById('modal-body');
+            const close = document.getElementById('modal-close');
+            if (!overlay) return;
+
+            document.querySelectorAll('#portfolio-grid .glass-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const title = card.dataset.title;
+                    const desc = card.dataset.desc;
+                    body.innerHTML = `
+                        <h3 class="text-2xl font-bold mb-4">${title}</h3>
+                        <p class="text-on-surface-variant">${desc}</p>
+                        <div class="mt-4 flex gap-3">
+                            <a href="www.html" class="btn-primary px-6 py-2 rounded-full text-sm inline-block">درخواست مشابه</a>
+                        </div>`;
+                    overlay.classList.add('active');
+                });
+            });
+            close.addEventListener('click', () => overlay.classList.remove('active'));
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) overlay.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>

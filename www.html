@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس — RITM</title>
+    <meta name="description" content="با آژانس خلاقیت دیجیتال ریتم تماس بگیرید. شروع پروژه، مشاوره رایگان.">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: { extend: {
+                colors: {
+                    "primary":"#d0bcff","on-surface":"#e5e2e1","on-background":"#e5e2e1",
+                    "on-surface-variant":"#cbc3d7","secondary":"#adc6ff","background":"#131313",
+                    "surface":"#131313"
+                },
+                borderRadius: { DEFAULT:"0.25rem", lg:"0.5rem", xl:"0.75rem", full:"9999px" },
+                spacing: { "margin-mobile":"16px","margin-desktop":"48px","container-max":"1280px" },
+                fontFamily: {
+                    "headline-sm":["Vazirmatn"],"body-lg":["Vazirmatn"],"code-label":["JetBrains Mono"],
+                    "body-md":["Vazirmatn"],"display-lg":["Vazirmatn"],
+                    "display-lg-mobile":["Vazirmatn"],"headline-md":["Vazirmatn"]
+                },
+                fontSize: {
+                    "headline-sm":["24px",{lineHeight:"1.4",fontWeight:"600"}],
+                    "body-lg":["18px",{lineHeight:"1.8",fontWeight:"400"}],
+                    "code-label":["14px",{lineHeight:"1.2",letterSpacing:"0.05em",fontWeight:"500"}],
+                    "body-md":["16px",{lineHeight:"1.6",fontWeight:"400"}],
+                    "display-lg":["64px",{lineHeight:"1.1",letterSpacing:"-0.02em",fontWeight:"800"}],
+                    "display-lg-mobile":["40px",{lineHeight:"1.2",fontWeight:"800"}],
+                    "headline-md":["32px",{lineHeight:"1.4",fontWeight:"700"}]
+                }
+            }}
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased min-h-screen flex flex-col relative bg-background font-body-md text-body-md text-on-background bg-grid">
+
+    <div id="preloader"><div class="loader-ring"></div><div class="preloader-logo"></div></div>
+    <div id="scroll-progress"><div id="scroll-progress-bar"></div></div>
+    <div id="back-to-top"><span class="material-symbols-outlined">arrow_upward</span></div>
+
+    <div class="theme-toggle fixed top-4 left-4 z-[60] md:top-auto md:bottom-6 md:right-6 md:left-auto" id="theme-toggle">
+        <span class="material-symbols-outlined">dark_mode</span>
+    </div>
+    <button class="lang-toggle fixed top-4 right-4 z-[60] md:top-auto md:bottom-6 md:right-20 md:left-auto" id="lang-toggle">
+        <span id="lang-label">English</span>
+    </button>
+
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-secondary"></div>
+    <div class="ambient-glow-tertiary"></div>
+
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-container-max rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)] flex justify-between items-center px-8 py-3 z-50 rtl hidden md:flex transition-all duration-500 hover:bg-white/10">
+        <a href="index.html" class="flex items-center gap-2 cursor-pointer select-none">
+            <img src="assets/logo.png" alt="ریتم" class="w-10 h-10 rounded-full object-contain">
+        </a>
+        <nav class="flex gap-8 items-center">
+            <a href="index.html" class="nav-link text-on-surface/70" data-i18n="nav-home">خانه</a>
+            <a href="main.html" class="nav-link text-on-surface/70" data-i18n="nav-portfolio">پورتفولیو</a>
+            <a href="cod.html" class="nav-link text-on-surface/70" data-i18n="nav-services">خدمات</a>
+            <a href="www.html" class="nav-link active text-primary font-bold" data-i18n="nav-contact">تماس</a>
+        </nav>
+        <a href="www.html" class="btn-primary px-7 py-2.5 rounded-full font-body-md text-body-md hover:scale-105 active:scale-95 transition-transform inline-flex items-center justify-center" data-i18n="nav-cta">شروع پروژه</a>
+    </header>
+
+    <nav class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] rounded-2xl bg-white/5 backdrop-blur-2xl border border-white/10 flex justify-around items-center py-3 z-50 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+        <a href="index.html" class="flex flex-col items-center text-on-surface-variant gap-0.5 nav-link">
+            <span class="material-symbols-outlined text-2xl">home</span>
+            <span class="text-[10px]" data-i18n="nav-home">خانه</span>
+        </a>
+        <a href="main.html" class="flex flex-col items-center text-on-surface-variant gap-0.5 nav-link">
+            <span class="material-symbols-outlined text-2xl">work</span>
+            <span class="text-[10px]" data-i18n="nav-portfolio">پورتفولیو</span>
+        </a>
+        <a href="cod.html" class="flex flex-col items-center text-on-surface-variant gap-0.5 nav-link">
+            <span class="material-symbols-outlined text-2xl">design_services</span>
+            <span class="text-[10px]" data-i18n="nav-services">خدمات</span>
+        </a>
+        <a href="www.html" class="flex flex-col items-center text-primary gap-0.5 nav-link active">
+            <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL'1;">contact_support</span>
+            <span class="text-[10px] font-bold" data-i18n="nav-contact">تماس</span>
+        </a>
+    </nav>
+
+    <main class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32 pt-20 md:pt-28 flex-grow">
+
+        <div class="text-center mb-16 mt-4 reveal">
+            <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-4" data-i18n="contact-title">آغاز همکاری</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto" data-i18n="contact-desc">ایده‌های خود را با ما در میان بگذارید تا با بالاترین کیفیت و در کمترین زمان آنها را به واقعیت تبدیل کنیم.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+            <!-- Contact Info -->
+            <div class="lg:col-span-4 flex flex-col gap-6 order-2 lg:order-1 reveal reveal-left" style="--reveal-delay: 0.15s;">
+                <div class="glass-panel rounded-xl p-6 shadow-2xl relative overflow-hidden shine-effect">
+                    <div class="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-primary to-secondary"></div>
+                    <h3 class="font-headline-md text-headline-md text-on-background mb-6" data-i18n="contact-info-title">اطلاعات تماس</h3>
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-start gap-4 group cursor-pointer">
+                            <div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center text-secondary shrink-0 border border-secondary/20 transition-all group-hover:scale-110">
+                                <span class="material-symbols-outlined">mail</span>
+                            </div>
+                            <div>
+                                <h4 class="font-headline-sm text-body-lg text-on-surface mb-1" data-i18n="contact-email-label">ایمیل ارتباطی</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant dir-ltr text-left group-hover:text-secondary transition-colors">Ritm_FreeLancer@Gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 group cursor-pointer">
+                            <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 border border-primary/20 transition-all group-hover:scale-110">
+                                <span class="material-symbols-outlined">call</span>
+                            </div>
+                            <div>
+                                <h4 class="font-headline-sm text-body-lg text-on-surface mb-1" data-i18n="contact-phone-label">تلفن تماس</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant dir-ltr text-left group-hover:text-primary transition-colors">+98 9939189217</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 group cursor-pointer">
+                            <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 border border-primary/20 transition-all group-hover:scale-110">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </div>
+                            <div>
+                                <h4 class="font-headline-sm text-body-lg text-on-surface mb-1" data-i18n="contact-address-label">آدرس</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors" data-i18n="contact-address">تهران، ایران</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-xl overflow-hidden shadow-2xl">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207344.55121260444!2d51.266292949999996!3d35.707759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00491ff3b1f9%3A0x2a45f7e08e6e6e61!2sTehran%2C%20Iran!5e0!3m2!1sen!2s!4v1710000000000" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="lg:col-span-8 order-1 lg:order-2 reveal reveal-right" style="--reveal-delay: 0.25s;">
+                <div class="glass-panel rounded-xl p-8 shadow-2xl relative shine-effect">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
+
+                    <div id="form-success" class="form-success mb-4">
+                        <span class="material-symbols-outlined align-middle ml-2">check_circle</span>
+                        <span data-i18n="form-success">درخواست شما با موفقیت ارسال شد. به زودی با شما تماس خواهیم گرفت.</span>
+                    </div>
+                    <div id="form-error" class="form-error mb-4">
+                        <span class="material-symbols-outlined align-middle ml-2">error</span>
+                        <span data-i18n="form-error">خطا در ارسال فرم. لطفاً دوباره تلاش کنید.</span>
+                    </div>
+
+                    <form class="relative z-10 flex flex-col gap-6" id="contact-form" action="https://formspree.io/f/mjgqpveq" method="POST" novalidate>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2 relative group">
+                                <label class="font-body-md text-body-md text-on-surface-variant group-focus-within:text-primary" for="name" data-i18n="form-name-label">نام و نام خانوادگی</label>
+                                <input class="w-full bg-black/30 border-b border-white/10 focus:border-primary text-on-background font-body-md py-3 px-4 rounded-t-md transition-all placeholder-white/20" id="name" name="name" placeholder="مثال: علی رضایی" type="text" required>
+                                <span class="validation-message text-red-400 text-xs hidden" data-i18n="form-name-error">لطفاً نام را وارد کنید</span>
+                            </div>
+                            <div class="flex flex-col gap-2 relative group">
+                                <label class="font-body-md text-body-md text-on-surface-variant group-focus-within:text-primary" for="contact" data-i18n="form-contact-label">ایمیل یا شماره تماس</label>
+                                <input class="w-full bg-black/30 border-b border-white/10 focus:border-primary text-on-background font-body-md py-3 px-4 rounded-t-md transition-all placeholder-white/20 dir-ltr text-left" id="contact" name="contact" placeholder="0912... یا email@example.com" type="text" required>
+                                <span class="validation-message text-red-400 text-xs hidden" data-i18n="form-contact-error">لطفاً ایمیل یا شماره معتبر وارد کنید</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-3">
+                            <label class="font-body-md text-body-md text-on-surface-variant" data-i18n="form-project-label">نوع پروژه</label>
+                            <div class="flex flex-wrap gap-3">
+                                <label class="cursor-pointer">
+                                    <input class="peer sr-only" name="project_type" type="radio" value="video" checked>
+                                    <div class="px-5 py-2 rounded-full border border-white/10 bg-white/5 font-body-md text-on-surface-variant peer-checked:bg-primary/20 peer-checked:border-primary/50 peer-checked:text-primary transition-all hover:bg-white/10" data-i18n="form-project-video">تدوین ویدیو</div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input class="peer sr-only" name="project_type" type="radio" value="web">
+                                    <div class="px-5 py-2 rounded-full border border-white/10 bg-white/5 font-body-md text-on-surface-variant peer-checked:bg-primary/20 peer-checked:border-primary/50 peer-checked:text-primary transition-all hover:bg-white/10" data-i18n="form-project-web">توسعه وب</div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input class="peer sr-only" name="project_type" type="radio" value="mobile">
+                                    <div class="px-5 py-2 rounded-full border border-white/10 bg-white/5 font-body-md text-on-surface-variant peer-checked:bg-primary/20 peer-checked:border-primary/50 peer-checked:text-primary transition-all hover:bg-white/10" data-i18n="form-project-mobile">اپلیکیشن موبایل</div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input class="peer sr-only" name="project_type" type="radio" value="other">
+                                    <div class="px-5 py-2 rounded-full border border-white/10 bg-white/5 font-body-md text-on-surface-variant peer-checked:bg-primary/20 peer-checked:border-primary/50 peer-checked:text-primary transition-all hover:bg-white/10" data-i18n="form-project-other">سایر موارد</div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <label class="font-body-md text-body-md text-on-surface-variant" for="budget" data-i18n="form-budget-label">بودجه تقریبی (اختیاری)</label>
+                            <select class="w-full bg-black/30 border-b border-white/10 focus:border-primary text-on-background font-body-md py-3 px-4 rounded-t-md transition-all appearance-none cursor-pointer" id="budget" name="budget">
+                                <option class="bg-surface" disabled selected value="" data-i18n="form-budget-placeholder">انتخاب کنید...</option>
+                                <option class="bg-surface" value="low" data-i18n="form-budget-1">کمتر از ۱۰ میلیون تومان</option>
+                                <option class="bg-surface" value="mid" data-i18n="form-budget-2">۱۰ تا ۵۰ میلیون تومان</option>
+                                <option class="bg-surface" value="high" data-i18n="form-budget-3">بیشتر از ۵۰ میلیون تومان</option>
+                            </select>
+                        </div>
+
+                        <div class="flex flex-col gap-2 relative group">
+                            <label class="font-body-md text-body-md text-on-surface-variant group-focus-within:text-primary" for="message" data-i18n="form-message-label">توضیحات پروژه</label>
+                            <textarea class="w-full bg-black/30 border border-white/10 focus:border-primary text-on-background font-body-md py-3 px-4 rounded-md transition-all placeholder-white/20 resize-y" id="message" name="message" placeholder="لطفاً جزئیات پروژه خود را اینجا بنویسید..." rows="5" required></textarea>
+                            <span class="validation-message text-red-400 text-xs hidden" data-i18n="form-message-error">لطفاً توضیحات پروژه را وارد کنید</span>
+                        </div>
+
+                        <input type="hidden" name="_subject" value="درخواست جدید از ریتم">
+
+                        <div class="mt-4 flex justify-end">
+                            <button class="btn-primary px-8 py-3 rounded-md font-headline-sm text-headline-sm flex items-center gap-2 active:scale-95" type="submit" id="submit-btn">
+                                <span data-i18n="form-submit">ارسال درخواست</span>
+                                <span class="material-symbols-outlined text-[20px]">send</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="w-full border-t border-white/5 bg-surface mt-auto relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-6 gap-4 max-w-container-max mx-auto rtl">
+            <img src="assets/logo.png" alt="ریتم" class="w-8 h-8 rounded-full object-contain">
+            <div class="flex gap-6">
+                <span class="font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100 transition-all hover:text-primary cursor-pointer" data-i18n="footer-telegram">تلگرام</span>
+                <span class="font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100 transition-all hover:text-primary cursor-pointer" data-i18n="footer-bale">بله</span>
+                <span class="font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100 transition-all hover:text-primary cursor-pointer" data-i18n="footer-instagram">اینستاگرام</span>
+            </div>
+            <div class="font-body-md text-body-md text-on-surface-variant text-sm" data-i18n="footer-copy">© ۲۰۲۴ ریتم. تمامی حقوق محفوظ است.</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // ─── اسکریپت مخصوص فرم تماس ───
+        window.initPage = function() {
+            initForm();
+        };
+
+        function initForm() {
+            const form = document.getElementById('contact-form');
+            const successEl = document.getElementById('form-success');
+            const errorEl = document.getElementById('form-error');
+            const submitBtn = document.getElementById('submit-btn');
+            if (!form) return;
+
+            const nameInput = document.getElementById('name');
+            const contactInput = document.getElementById('contact');
+            const messageInput = document.getElementById('message');
+
+            nameInput.addEventListener('blur', () => validateField(nameInput, nameInput.value.trim().length >= 2));
+            contactInput.addEventListener('blur', () => validateField(contactInput, isValidContact(contactInput.value.trim())));
+            messageInput.addEventListener('blur', () => validateField(messageInput, messageInput.value.trim().length >= 10));
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const isNameValid = nameInput.value.trim().length >= 2;
+                const isContactValid = isValidContact(contactInput.value.trim());
+                const isMessageValid = messageInput.value.trim().length >= 10;
+                validateField(nameInput, isNameValid);
+                validateField(contactInput, isContactValid);
+                validateField(messageInput, isMessageValid);
+
+                if (!isNameValid || !isContactValid || !isMessageValid) {
+                    errorEl.classList.add('show');
+                    return;
+                }
+
+                successEl.classList.remove('show');
+                errorEl.classList.remove('show');
+                submitBtn.disabled = true;
+                const originalHTML = submitBtn.innerHTML;
+                submitBtn.innerHTML = '...';
+
+                try {
+                    const formData = new FormData(form);
+                    const response = await fetch(form.action, {
+                        method: 'POST', body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        successEl.classList.add('show');
+                        form.reset();
+                    } else {
+                        errorEl.classList.add('show');
+                    }
+                } catch (err) {
+                    errorEl.classList.add('show');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalHTML;
+                }
+            });
+        }
+        function validateField(input, isValid) {
+            const messageEl = input.parentElement.querySelector('.validation-message');
+            if (isValid) {
+                input.classList.remove('input-invalid');
+                input.classList.add('input-valid');
+                if (messageEl) messageEl.classList.add('hidden');
+            } else {
+                input.classList.remove('input-valid');
+                input.classList.add('input-invalid');
+                if (messageEl) messageEl.classList.remove('hidden');
+            }
+        }
+        function isValidContact(value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^(\+98|0)?9\d{9}$/;
+            return emailRegex.test(value) || phoneRegex.test(value);
+        }
+    </script>
+</body>
+</html>

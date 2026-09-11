@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="fa">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات — RITM</title>
+    <meta name="description" content="خدمات آژانس خلاقیت دیجیتال ریتم: تدوین، توسعه وب و اپلیکیشن موبایل.">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: { extend: {
+                colors: {
+                    "primary":"#d0bcff","on-surface":"#e5e2e1","on-background":"#e5e2e1",
+                    "on-surface-variant":"#cbc3d7","secondary":"#adc6ff","background":"#131313",
+                    "surface":"#131313"
+                },
+                borderRadius: { DEFAULT:"0.25rem", lg:"0.5rem", xl:"0.75rem", full:"9999px" },
+                spacing: { "margin-mobile":"16px","margin-desktop":"48px","container-max":"1280px" },
+                fontFamily: {
+                    "headline-sm":["Vazirmatn"],"body-lg":["Vazirmatn"],"code-label":["JetBrains Mono"],
+                    "body-md":["Vazirmatn"],"display-lg":["Vazirmatn"],
+                    "display-lg-mobile":["Vazirmatn"],"headline-md":["Vazirmatn"]
+                },
+                fontSize: {
+                    "headline-sm":["24px",{lineHeight:"1.4",fontWeight:"600"}],
+                    "body-lg":["18px",{lineHeight:"1.8",fontWeight:"400"}],
+                    "code-label":["14px",{lineHeight:"1.2",letterSpacing:"0.05em",fontWeight:"500"}],
+                    "body-md":["16px",{lineHeight:"1.6",fontWeight:"400"}],
+                    "display-lg":["64px",{lineHeight:"1.1",letterSpacing:"-0.02em",fontWeight:"800"}],
+                    "display-lg-mobile":["40px",{lineHeight:"1.2",fontWeight:"800"}],
+                    "headline-md":["32px",{lineHeight:"1.4",fontWeight:"700"}]
+                }
+            }}
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased min-h-screen flex flex-col relative bg-background font-body-md text-body-md text-on-background bg-grid">
+
+    <div id="preloader"><div class="loader-ring"></div><div class="preloader-logo"></div></div>
+    <div id="scroll-progress"><div id="scroll-progress-bar"></div></div>
+    <div id="back-to-top"><span class="material-symbols-outlined">arrow_upward</span></div>
+
+    <div class="theme-toggle fixed top-4 left-4 z-[60] md:top-auto md:bottom-6 md:right-6 md:left-auto" id="theme-toggle">
+        <span class="material-symbols-outlined">dark_mode</span>
+    </div>
+    <button class="lang-toggle fixed top-4 right-4 z-[60] md:top-auto md:bottom-6 md:right-20 md:left-auto" id="lang-toggle">
+        <span id="lang-label">English</span>
+    </button>
+
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-secondary"></div>
+    <div class="ambient-glow-tertiary"></div>
+
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-container-max rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)] flex justify-between items-center px-8 py-3 z-50 rtl hidden md:flex transition-all duration-500 hover:bg-white/10">
+        <a href="index.html" class="flex items-center gap-2 cursor-pointer select-none">
+            <img src="assets/logo.png" alt="ریتم" class="w-10 h-10 rounded-full object-contain">
+        </a>
+        <nav class="flex gap-8 items-center">
+            <a href="index.html" class="nav-link text-on-surface/70" data-i18n="nav-home">خانه</a>
+            <a href="main.html" class="nav-link text-on-surface/70" data-i18n="nav-portfolio">پورتفولیو</a>
+            <a href="cod.html" class="nav-link active text-primary font-bold" data-i18n="nav-services">خدمات</a>
+            <a href="www.html" class="nav-link text-on-surface/70" data-i18n="nav-contact">تماس</a>
+        </nav>
+        <a href="www.html" class="btn-primary px-7 py-2.5 rounded-full font-body-md text-body-md hover:scale-105 active:scale-95 transition-transform inline-flex items-center justify-center" data-i18n="nav-cta">شروع پروژه</a>
+    </header>
+
+    <nav class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] rounded-2xl bg-white/5 backdrop-blur-2xl border border-white/10 flex justify-around items-center py-3 z-50 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+        <a href="index.html" class="flex flex-col items-center text-on-surface-variant gap-0.5 nav-link">
+            <span class="material-symbols-outlined text-2xl">home</span>
+            <span class="text-[10px]" data-i18n="nav-home">خانه</span>
+        </a>
+        <a href="main.html" class="flex flex-col items-center text-on-surface-variant gap-0.5 nav-link">
+            <span class="material-symbols-outlined text-2xl">work</span>
+            <span class="text-[10px]" data-i18n="nav-portfolio">پورتفولیو</span>
+        </a>
+        <a href="cod.html" class="flex flex-col items-center text-primary gap-0.5 nav-link active">
+            <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL'1;">design_services</span>
+            <span class="text-[10px] font-bold" data-i18n="nav-services">خدمات</span>
+        </a>
+        <a href="www.html" class="flex flex-col items-center text-on-surface-variant gap-0.5 nav-link">
+            <span class="material-symbols-outlined text-2xl">contact_support</span>
+            <span class="text-[10px]" data-i18n="nav-contact">تماس</span>
+        </a>
+    </nav>
+
+    <main class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32 pt-20 md:pt-28 flex-grow">
+
+        <div class="mb-16 flex flex-col gap-6 text-center md:text-right reveal">
+            <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface" data-i18n="services-page-title">خدمات ما</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto md:mx-0" data-i18n="services-page-desc">
+                ما با ترکیب هنر دیجیتال و مهندسی نرم‌افزار، راه‌حل‌های خلاقانه و کاربردی برای برند شما ارائه می‌دهیم.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass-card shine-effect tilt-card rounded-2xl p-8 flex flex-col gap-4 group reveal reveal-left" style="--reveal-delay: 0.1s;" data-tilt>
+                <div class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 group-hover:scale-110 transition-all duration-500">
+                    <span class="material-symbols-outlined text-5xl" style="font-variation-settings:'FILL'1;">movie_edit</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors" data-i18n="service-video-title">تدوین و پست‌پروداکشن</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant" data-i18n="service-video-desc">ویرایش حرفه‌ای ویدیو با نرم‌افزار پریمیر پرو، اصلاح رنگ، صداگذاری و میکس.</p>
+                <ul class="mt-2 space-y-2 text-on-surface-variant font-body-md">
+                    <li class="flex items-center gap-2 hover:text-primary transition-colors"><span class="text-primary">✓</span> <span data-i18n="sv1-1">تدوین فیلم، تیزر و مستند</span></li>
+                    <li class="flex items-center gap-2 hover:text-primary transition-colors"><span class="text-primary">✓</span> <span data-i18n="sv1-2">اصلاح رنگ حرفه‌ای (Color Grading)</span></li>
+                    <li class="flex items-center gap-2 hover:text-primary transition-colors"><span class="text-primary">✓</span> <span data-i18n="sv1-3">میکس و مسترینگ صدا</span></li>
+                </ul>
+            </div>
+
+            <div class="glass-card shine-effect tilt-card rounded-2xl p-8 flex flex-col gap-4 group reveal reveal-right" style="--reveal-delay: 0.2s;" data-tilt>
+                <div class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 group-hover:scale-110 transition-all duration-500">
+                    <span class="material-symbols-outlined text-5xl" style="font-variation-settings:'FILL'1;">code</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors" data-i18n="service-web-title">توسعه وب</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant" data-i18n="service-web-desc">ساخت کدهای سایت‌های مدرن، واکنش‌گرا و بهینه‌شده با HTML، CSS و JavaScript.</p>
+                <ul class="mt-2 space-y-2 text-on-surface-variant font-body-md">
+                    <li class="flex items-center gap-2 hover:text-primary transition-colors"><span class="text-primary">✓</span> <span data-i18n="sv2-1">وب‌سایت‌های شرکتی و شخصی</span></li>
+                    <li class="flex items-center gap-2 hover:text-primary transition-colors"><span class="text-primary">✓</span> <span data-i18n="sv2-2">طراحی واکنش‌گرا (Responsive)</span></li>
+                    <li class="flex items-center gap-2 hover:text-primary transition-colors"><span class="text-primary">✓</span> <span data-i18n="sv2-3">بهینه‌سازی سرعت و سئو</span></li>
+                </ul>
+            </div>
+
+            <div class="glass-card shine-effect tilt-card rounded-2xl p-8 flex flex-col gap-4 group reveal" style="--reveal-delay: 0.3s;" data-tilt>
+                <div class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 group-hover:scale-110 transition-all duration-500">
+                    <span class="material-symbols-outlined text-5xl" style="font-variation-settings:'FILL'1;">smartphone</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors" data-i18n="service-mobile-title">اپلیکیشن موبایل (پایه)</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant" data-i18n="service-mobile-desc">ساخت اپلیکیشن‌های موبایل ساده و کاربردی با تمرکز بر نیازهای پایه‌ای کاربران.</p>
+                <ul class="mt-2 space-y-2 text-on-surface-variant font-body-md">
+                    <li class="flex items-center gap-2 hover:text-primary transition-colors"><span class="text-primary">✓</span> <span data-i18n="sv3-1">اپلیکیشن‌های مدیریتی و یادداشت</span></li>
+                    <li class="flex items-center gap-2 hover:text-primary transition-colors"><span class="text-primary">✓</span> <span data-i18n="sv3-2">رابط کاربری ساده و روان</span></li>
+                    <li class="flex items-center gap-2 hover:text-primary transition-colors"><span class="text-primary">✓</span> <span data-i18n="sv3-3">ذخیره‌سازی محلی و آفلاین</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="mt-20 mb-16 reveal">
+            <h2 class="font-headline-md text-headline-md text-on-surface text-center mb-8" data-i18n="faq-title">سوالات متداول</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-i18n="faq-q1">هزینه پروژه‌ها چگونه محاسبه می‌شود؟</span>
+                        <span class="material-symbols-outlined faq-icon">expand_more</span>
+                    </div>
+                    <div class="faq-answer"><p class="font-body-md text-on-surface-variant" data-i18n="faq-a1">هزینه بر اساس پیچیدگی، زمان تحویل و حجم کار تعیین می‌شود. برای دریافت برآورد دقیق، فرم تماس را پر کنید.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-i18n="faq-q2">چه مدت زمانی برای تحویل پروژه نیاز است؟</span>
+                        <span class="material-symbols-outlined faq-icon">expand_more</span>
+                    </div>
+                    <div class="faq-answer"><p class="font-body-md text-on-surface-variant" data-i18n="faq-a2">بسته به نوع پروژه متفاوت است. معمولاً تدوین ویدیو ۳ تا ۷ روز کاری، وب‌سایت ۱ تا ۲ هفته و اپلیکیشن ۲ تا ۴ هفته زمان می‌برد.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-i18n="faq-q3">آیا امکان اصلاح بعد از تحویل وجود دارد؟</span>
+                        <span class="material-symbols-outlined faq-icon">expand_more</span>
+                    </div>
+                    <div class="faq-answer"><p class="font-body-md text-on-surface-variant" data-i18n="faq-a3">بله، هر پروژه شامل دو مرحله اصلاحات رایگان است تا نتیجه نهایی مطابق انتظار شما باشد.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-i18n="faq-q4">آیا برای پروژه‌های بزرگ قرارداد رسمی منعقد می‌شود؟</span>
+                        <span class="material-symbols-outlined faq-icon">expand_more</span>
+                    </div>
+                    <div class="faq-answer"><p class="font-body-md text-on-surface-variant" data-i18n="faq-a4">بله، برای پروژه‌های بزرگ‌تر، قرارداد رسمی با جزئیات کامل تنظیم می‌شود تا حقوق هر دو طرف محفوظ باشد.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center reveal" style="--reveal-delay: 0.2s;">
+            <a href="www.html" class="btn-primary px-10 py-4 rounded-full font-headline-sm text-headline-sm !text-lg inline-block" data-i18n="services-cta">دریافت مشاوره رایگان</a>
+        </div>
+
+    </main>
+
+    <footer class="w-full border-t border-white/5 bg-surface mt-auto relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-6 gap-4 max-w-container-max mx-auto rtl">
+            <img src="assets/logo.png" alt="ریتم" class="w-8 h-8 rounded-full object-contain">
+            <div class="flex gap-6">
+                <span class="font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100 transition-all hover:text-primary cursor-pointer" data-i18n="footer-telegram">تلگرام</span>
+                <span class="font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100 transition-all hover:text-primary cursor-pointer" data-i18n="footer-bale">بله</span>
+                <span class="font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100 transition-all hover:text-primary cursor-pointer" data-i18n="footer-instagram">اینستاگرام</span>
+            </div>
+            <div class="font-body-md text-body-md text-on-surface-variant text-sm" data-i18n="footer-copy">© ۲۰۲۴ ریتم. تمامی حقوق محفوظ است.</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // ─── اسکریپت مخصوص خدمات ───
+        window.initPage = function() {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    const isActive = item.classList.contains('active');
+                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                    if (!isActive) item.classList.add('active');
+                });
+            });
+        };
+    </script>
+</body>
+</html>
